@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+  <meta charset="utf-8">
+  <title></title>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    $(function() {
+      <!-- m = document.getElementById -->
+      m = document.getElementById('main')
+      c = document.getElementById('content')
+
+      m.onscroll = function() {
+        myFunction()
+      };
+
+      const myFunction = () => {
+        h = $('#main').scrollTop()
+        $('#co').text(h)
+        h >= window.innerHeight && h < window.innerHeight * 2 ?
+          $('.header').addClass('font-black') :
+          $('.header').removeClass('font-black')
+      }
+    })
+  </script>
+  <style>
+    html,
+    body,
+    .main {
+      width: 100%;
+      height: 100%;
+      /* background: #2f2f2f; */
+      font-size: 22px;
+      overflow: hidden;
+      margin: 0;
+    }
+
+    .main {
+      overflow: auto;
+    }
+
+    .content-wrapper {
+      width: 100%;
+    }
+
+    .content {
+      height: calc(300vh);
+      background: #2f2f2f;
+      flex: 1;
+    }
+
+    .header {
+      flex: 1;
+      height: 100px;
+      width: 100%;
+      position: fixed;
+      box-shadow: 0 0 2px 0 #fff inset;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2em;
+      letter-spacing: 5px;
+      transition: .5s;
+      text-shadow: 0 0 5px #F0F0FB;
+    }
+
+    .font-black {
+      color: #000;
+    }
+
+    .section {
+      width: 100%;
+      height: 100vh;
+      box-shadow: 0 0 0 2px #fff inset;
+    }
+
+    .s2 {
+      background: #ddd;
+    }
+
+    .s3 {
+      background: #222;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .s3 a {
+      text-decoration: none;
+      font-size: 2em;
+      color: #ddd;
+      text-shadow: 0 0 5px #F0F0FB;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="main" class="main">
+    <div class="content-wrapper">
+      <div class="header">
+        <span>Header-color-Demo, calculate content-offset: </span>
+        <span id='co'>0</span>px
+      </div>
+      <div id="content" class="content">
+        <div class="section s1">
+        </div>
+        <div class="section s2">
+        </div>
+        <div class="section s3">
+          <a href="./zoomfade.html">Go Slide Demo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
